@@ -146,6 +146,8 @@ function Wishlist_box2() {
           </span>
           <span>
             <CiStar />
+
+            
           </span>
         </div>
       </div>
