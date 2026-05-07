@@ -1,0 +1,151 @@
+.hero {
+  width: 100%;
+  padding: 16px 0;
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+ 
+.hero .container {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+ 
+.hero .item:first-child {
+  flex: 0 0 200px;
+  border-right: 1px solid #e8e8e8;
+  padding-right: 12px;
+}
+ 
+.hero .item:first-child ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+ 
+.hero .item:first-child ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  user-select: none;
+}
+ 
+.hero .item:first-child ul li:hover {
+  background-color: #f5f5f5;
+  color: #db4444;
+}
+ 
+.hero .item:first-child ul li span {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #888;
+  transition: color 0.2s ease;
+}
+ 
+.hero .item:first-child ul li:hover span {
+  color: #db4444;
+}
+ 
+.hero .item:last-child {
+  flex: 1;
+  min-width: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+ 
+.hero .mySwiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+ 
+.hero .mySwiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+ 
+.hero .mySwiper .swiper-slide img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+ 
+.hero .mySwiper .swiper-pagination-bullet {
+  background-color: #fff;
+  opacity: 0.5;
+  width: 8px;
+  height: 8px;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+ 
+.hero .mySwiper .swiper-pagination-bullet-active {
+  background-color: #db4444;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+}
+ 
+.hero .mySwiper .swiper-button-next,
+.hero .mySwiper .swiper-button-prev {
+  
+  display: none;
+}
+ 
+
+ 
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero .container {
+  display: flex;
+  gap: 20px;
+}
+
+.item:nth-child(1) {
+  width: 20%;
+}
+
+.item:nth-child(2) {
+  width: 80%;
+  height: 300px;
+}

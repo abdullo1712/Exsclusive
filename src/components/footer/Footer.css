@@ -1,0 +1,144 @@
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 60px 0 20px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 100px;
+}
+
+.footer_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+}
+
+.footer_col {
+  transition: 0.3s;
+}
+
+
+.footer_col h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer_col h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer_col p,
+.footer_col li {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.footer_col ul {
+  padding: 0;
+}
+
+.footer_col li {
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+}
+
+.footer_col li:hover {
+  color: #fff;
+}
+
+
+.footer_col li:hover::after {
+  width: 50%;
+}
+
+/* SUBSCRIBE */
+.subscribe {
+  display: flex;
+  border: 1px solid #555;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+
+
+.subscribe input {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  outline: none;
+  flex: 1;
+}
+
+.subscribe input:focus {
+  background: rgba(255,255,255,0.05);
+}
+
+.subscribe button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+
+/* APP */
+.app_box {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.app_box img {
+  width: 80px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+
+
+.stores img {
+  width: 100px;
+  display: block;
+  margin-bottom: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+
+
+/* SOCIAL */
+.socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.socials i {
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+.socials i:hover {
+    transform: scale(1.2);
+}
+
+.footer_bottom {
+  text-align: center;
+  border-top: 1px solid #222;
+  margin-top: 40px;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #777;
+}

@@ -1,0 +1,105 @@
+/* Navigatsiya asosiy konteyneri */
+
+nav {
+  width: 100%;
+  border-bottom: 0.5px solid #b3b3b3; 
+  padding: 20px 0;
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+/* background-color: transparent; */
+  background-color: #fffffffa; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 2px;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+
+.logo {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 48px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: flex;
+  gap: 48px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color: #db4444;
+}
+nav ul li a.active {
+  color: #db4444;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 7px 12px 7px 20px;
+  border-radius: 4px;
+  gap: 10px;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 12px;
+  width: 200px;
+}
+
+.search-icon {
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.likebutton,
+.shopbutton,
+.userbutton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 5px;
+  margin-left: 10px;
+  transition: transform 0.2s;
+}
+
+.likebutton:hover,
+.shopbutton:hover,
+.userbutton:hover {
+  transform: scale(1.1);
+}
+button svg{
+  color: #000;
+}

@@ -1,0 +1,241 @@
+.about.container {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  color: #1a1a2e;
+}
+
+/* ===========================
+   Our Story Section
+   =========================== */
+.aboutbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.about_txt {
+  flex: 1;
+  max-width: 520px;
+}
+
+.about_txt h1 {
+  font-size: 54px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #1a1a2e;
+}
+
+.about_txt p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.aboutimg {
+  flex: 1;
+  max-width: 540px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ===========================
+   Stats Cards
+   =========================== */
+.aboutcards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.aboutcard {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 32px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.aboutcard:hover {
+  background: #db4444;
+  border-color: #db4444;
+  box-shadow: 0 8px 30px rgba(219, 68, 68, 0.3);
+}
+
+.iconcard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.07);
+  margin: 0 auto 16px;
+  transition: background 0.3s ease;
+}
+
+.aboutcard:hover .iconcard {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.miniiconcard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1a1a2e;
+  transition: background 0.3s ease;
+}
+
+.aboutcard:hover .miniiconcard {
+  background: #fff;
+}
+
+.abouticon {
+  font-size: 22px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.aboutcard:hover .abouticon {
+  color: #db4444;
+}
+
+.aboutcard span {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #1a1a2e;
+  transition: color 0.3s ease;
+}
+
+.aboutcard:hover span {
+  color: #fff;
+}
+
+.aboutcard p {
+  font-size: 14px;
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+.aboutcard:hover p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===========================
+   Team Section
+   =========================== */
+.devs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.devscard {
+  text-align: left;
+}
+
+.devimg {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  aspect-ratio: 3 / 3.5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.devimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.devscard h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1a1a2e;
+}
+
+.devscard > p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.devscard ul {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.devscard ul li {
+  font-size: 18px;
+  color: #1a1a2e;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.devscard ul li:hover {
+  color: #db4444;
+  transform: translateY(-3px);
+}
+
+/* ===========================
+   Services Section
+   =========================== */
+.services {
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding-top: 40px;
+  border-top: 1.5px solid #e0e0e0;
+}
+
+.services_box {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.services_box img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.services_box h2 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  color: #1a1a2e;
+}
+
+.services_box p {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.6;
+}

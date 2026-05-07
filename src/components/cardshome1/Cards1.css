@@ -1,0 +1,111 @@
+.card1 .container {
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 50px 0px 50px 0px;
+  flex-wrap: wrap;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.carsd_box {
+  width: 250px;
+  background: #e6e2e27d;
+  border: 0.1px solid #0000002a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  /* text-align: center; */
+  margin: 20px 0px 0px 0px;
+}
+
+.carsd_box:hover {
+  transform: translateY(-5px);
+}
+
+/* Rasm va tugma joylashgan joy */
+.box_imgs {
+  position: relative;
+  width: 100%;
+  /* height: 200px; */
+  overflow: hidden;
+}
+
+.box_imgs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.Addbutton {
+  position: absolute !important;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  transition: all 0.3s ease !important;
+  background-color: #db4444 !important;
+  text-transform: none !important;
+  font-weight: bold !important;
+}
+
+.carsd_box:hover .Addbutton {
+  bottom: 0px;
+}
+
+.carsd_box:hover .box_imgs img {
+  filter: brightness(0.8);
+}
+
+.carsd_box .box_button {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  display: block;
+  gap: 10px;
+}
+.like_button,
+.eye_button {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.like_button svg,
+.eye_button svg{
+  color: black;
+}
+
+.carsd_box h3 {
+  padding-left: 10px;
+  margin: 15px 0 5px;
+  font-size: 1.2rem;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.carsd_box p {
+  padding-left: 10px;
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+.carsd_box span {
+  padding: 0px 0px 50px 10px;
+  color: #f1c40f;
+  font-size: 20px;
+}
+
+
+/*  */

@@ -1,0 +1,169 @@
+.sign {
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+  width: 1400px;
+  margin: auto;
+
+}
+.sing_inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign_up {
+  width: 371px;
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+.sign_up h1 {
+  font-weight: 500;
+  font-size: 36px;
+  margin-bottom: 20px;
+  margin-left: 23px;
+}
+.sign_up p {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-left: 23px;
+}
+
+
+.input-container {
+  position: relative;
+  margin: 20px;
+}
+
+
+.input-field {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+}
+
+/* Input label */
+.input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: rgba(204, 204, 204, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Input highlight */
+.input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: rgb(0, 72, 255);
+  transition: all 0.3s ease;
+}
+
+/* Input field:focus styles */
+.input-field:focus + .input-label {
+  top: -20px;
+  font-size: 12px;
+  color: #db4444;
+}
+
+.input-field:focus + .input-label + .input-highlight {
+  width: 100%;
+}
+
+.sing_inputs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 333px;
+  height: 56px;
+  border-radius: 4px;
+  cursor: pointer;
+  gap: 15px;
+}
+.accaunt {
+  background: #db4444;
+  border: 1px solid rgba(0, 0, 0, 0.53);
+  color: #fafafa;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 30px;
+  transition: all 0.2s ease-in-out;
+  margin-top: 20px;
+  margin-left: 22px;
+  border: none;
+}
+.accaunt:hover {
+  background: #c63a3a;
+  transform: translateY(-2px); 
+  box-shadow: 0 8px 20px rgba(219, 68, 68, 0.25);
+}
+.withgoogle {
+  font-weight: 400;
+  font-size: 16px;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.53);
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  margin-left: 22px;
+  border: none;
+  background-color: #b3afafa0;
+}
+
+.withgoogle:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-2px);
+}
+
+.signbutton {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.already p {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.already p a {
+    text-decoration: none;
+    color: #3a64c6;
+  /* text-decoration: underline; */
+
+}
+
+.already p a:hover{
+  color: rgb(0, 34, 255);
+}
+.googleicon {
+  font-size: 30px;
+}
+.password-container {
+  display: flex;
+  align-items: center;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #666;
+}
