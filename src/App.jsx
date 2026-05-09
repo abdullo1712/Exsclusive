@@ -16,7 +16,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <Navbar />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
@@ -24,8 +24,9 @@ function App() {
           <Route path="/sign_up" element={<Sign_Up />} />
           <Route path="/login" element={<Login />} />
           <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/cart" element={<Cart/>}/>
-          <Route path="/productDetails" element={<ProductDetails/>}/>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/productDetails" element={<ProductDetails />} />
         </Routes>
         <Footer />
       </BrowserRouter>

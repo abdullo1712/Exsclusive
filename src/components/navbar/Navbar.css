@@ -103,3 +103,32 @@ nav ul li a.active {
 button svg{
   color: #000;
 }
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #db4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.likebutton,
+.shopbutton {
+  position: relative;
+}
+
+.likebutton a,
+.shopbutton a {
+  display: flex;
+  align-items: center;
+  position: relative;
+}

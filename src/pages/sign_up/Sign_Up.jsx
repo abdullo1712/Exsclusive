@@ -1,14 +1,22 @@
 import React, { useState } from "react";
 import "./Sign_Up.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { MdOutlineRemoveRedEye, MdRemoveRedEye } from "react-icons/md";
+import { MdRemoveRedEye } from "react-icons/md";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import { registerUser } from "../../api/api";
 
 function Sign_Up() {
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({
+    first_name: "",
+    last_name: "",
+    email_or_phone: "",
+    password: "",
+  });
   const [showPass, setShowPass] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState({ show: false, message: "", type: "" });
+  const navigate = useNavigate();
 
   const showToast = (message, type = "success") => {
     setToast({ show: true, message, type });
@@ -19,44 +27,34 @@ function Sign_Up() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    const { name, email, password } = form;
-
-    if (!name.trim()) return showToast("Ism kiriting!", "error");
-    if (!email.trim())
-      return showToast("Email yoki telefon kiriting!", "error");
+  const handleSubmit = async () => {
+    const { first_name, last_name, email_or_phone, password } = form;
+    if (!first_name.trim()) return showToast("Ism kiriting!", "error");
+    if (!last_name.trim()) return showToast("Familiya kiriting!", "error");
+    if (!email_or_phone.trim()) return showToast("Email yoki telefon kiriting!", "error");
     if (password.length < 6)
-      return showToast(
-        "Parol kamida 6 ta belgidan iborat bo'lishi kerak!",
-        "error",
-      );
+      return showToast("Parol kamida 6 ta belgidan iborat bo'lishi kerak!", "error");
 
-    // LocalStorage ga saqlash
-    const users = JSON.parse(localStorage.getItem("users") || "[]");
-
-    const alreadyExists = users.find((u) => u.email === email);
-    if (alreadyExists)
-      return showToast("Bu email allaqachon ro'yxatdan o'tgan!", "error");
-
-    const newUser = {
-      name,
-      email,
-      password,
-      createdAt: new Date().toISOString(),
-    };
-    users.push(newUser);
-    localStorage.setItem("users", JSON.stringify(users));
-
-    showToast(
-      `${name}! Ro'yxatdan muvaffaqiyatli o'tdingiz`,
-      "success",
-    );
-    setForm({ name: "", email: "", password: "" });
+    setLoading(true);
+    try {
+      await registerUser({ first_name, last_name, email_or_phone, password });
+      showToast("Muvaffaqiyatli ro'yxatdan o'tdingiz!", "success");
+      setTimeout(() => navigate("/login"), 1500);
+    } catch (err) {
+      const msg =
+        err?.email_or_phone?.[0] ||
+        err?.password?.[0] ||
+        err?.first_name?.[0] ||
+        err?.detail ||
+        "Xatolik yuz berdi!";
+      showToast(msg, "error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="container sign">
-      {/* Toast notification */}
       {toast.show && (
         <div
           style={{
@@ -86,7 +84,7 @@ function Sign_Up() {
         }
       `}</style>
 
-      <img src="./imgs/login1.png" alt="" />
+      <img src="/imgs/login1.png" alt="" />
 
       <div className="sign_up">
         <h1>Create an account</h1>
@@ -95,14 +93,27 @@ function Sign_Up() {
         <div className="sing_inputs">
           <div className="input-container">
             <input
-              placeholder="Name"
+              placeholder="First Name"
               className="input-field"
               type="text"
-              name="name"
-              value={form.name}
+              name="first_name"
+              value={form.first_name}
               onChange={handleChange}
             />
-            <label className="input-label">Name</label>
+            <label className="input-label">First Name</label>
+            <span className="input-highlight"></span>
+          </div>
+
+          <div className="input-container">
+            <input
+              placeholder="Last Name"
+              className="input-field"
+              type="text"
+              name="last_name"
+              value={form.last_name}
+              onChange={handleChange}
+            />
+            <label className="input-label">Last Name</label>
             <span className="input-highlight"></span>
           </div>
 
@@ -111,8 +122,8 @@ function Sign_Up() {
               placeholder="Email or Phone Number"
               className="input-field"
               type="text"
-              name="email"
-              value={form.email}
+              name="email_or_phone"
+              value={form.email_or_phone}
               onChange={handleChange}
             />
             <label className="input-label">Email or Phone Number</label>
@@ -135,8 +146,8 @@ function Sign_Up() {
           </div>
 
           <div className="signbutton">
-            <button className="accaunt" onClick={handleSubmit}>
-              Create Account
+            <button className="accaunt" onClick={handleSubmit} disabled={loading}>
+              {loading ? "Yuklanmoqda..." : "Create Account"}
             </button>
             <button className="withgoogle">
               <FcGoogle className="googleicon" />

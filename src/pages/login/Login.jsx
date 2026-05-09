@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { MdOutlineRemoveRedEye, MdRemoveRedEye } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
+import { MdRemoveRedEye } from "react-icons/md";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import { useNavigate, NavLink } from "react-router-dom";
+import { loginUser } from "../../api/api";
+import { useApp } from "../../context/AppContext";
 
 function Login() {
-  const [form, setForm] = useState({ email: "", password: "" });
+  const [form, setForm] = useState({ email_or_phone: "", password: "" });
   const [showPass, setShowPass] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState({ show: false, message: "", type: "" });
   const navigate = useNavigate();
+  const { onLoginSuccess } = useApp();
 
   const showToast = (message, type = "success") => {
     setToast({ show: true, message, type });
@@ -19,30 +23,31 @@ function Login() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleLogin = () => {
-    const { email, password } = form;
-
-    if (!email.trim())
-      return showToast("Email yoki telefon kiriting!", "error");
+  const handleLogin = async () => {
+    const { email_or_phone, password } = form;
+    if (!email_or_phone.trim()) return showToast("Email yoki telefon kiriting!", "error");
     if (!password.trim()) return showToast("Parolni kiriting!", "error");
 
-    const users = JSON.parse(localStorage.getItem("users") || "[]");
-    const user = users.find(
-      (u) => u.email === email && u.password === password,
-    );
-
-    if (!user) return showToast("Email yoki parol noto'g'ri!", "error");
-
-    showToast(`Xush kelibsiz, ${user.name}! `, "success");
-
-    setTimeout(() => {
-      navigate("/");
-    }, 1500);
+    setLoading(true);
+    try {
+      await loginUser({ email_or_phone, password });
+      await onLoginSuccess();
+      showToast("Xush kelibsiz!", "success");
+      setTimeout(() => navigate("/"), 1000);
+    } catch (err) {
+      const msg =
+        err?.detail ||
+        err?.non_field_errors?.[0] ||
+        err?.email_or_phone?.[0] ||
+        "Email yoki parol noto'g'ri!";
+      showToast(msg, "error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="container login">
-      {/* Toast */}
       {toast.show && (
         <div
           style={{
@@ -72,7 +77,7 @@ function Login() {
         }
       `}</style>
 
-      <img className="login__image" src="./imgs/login1.png" alt="" />
+      <img className="login__image" src="/imgs/login1.png" alt="" />
 
       <div className="login__form">
         <h1 className="login__title">Log in to Exclusive</h1>
@@ -84,8 +89,8 @@ function Login() {
               placeholder="Email or Phone Number"
               className="login__input"
               type="text"
-              name="email"
-              value={form.email}
+              name="email_or_phone"
+              value={form.email_or_phone}
               onChange={handleChange}
             />
             <label className="login__label">Enter email or phone number</label>
@@ -109,10 +114,17 @@ function Login() {
           </div>
 
           <div className="login__actions">
-            <button className="login__button" onClick={handleLogin}>
-              Log In
+            <button className="login__button" onClick={handleLogin} disabled={loading}>
+              {loading ? "Kirish..." : "Log In"}
             </button>
             <p className="login__forgot">Forget Password?</p>
+          </div>
+
+          <div className="already" style={{ marginTop: 20 }}>
+            <p>
+              Akkaunt yo'qmi?{" "}
+              <NavLink to="/sign_up">Ro'yxatdan o'tish</NavLink>
+            </p>
           </div>
         </div>
       </div>
