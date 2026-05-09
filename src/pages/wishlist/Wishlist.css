@@ -1,6 +1,47 @@
-.wishlist{
-    max-width: 1200px;
-    margin: 0 auto;
-    
-    
+.wishlist {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wishlist .flash-sales {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding: 0;
+}
+
+.wishlist .flash-sales__title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.wishlist .home_button2 .MuiButton-root {
+  background-color: #db4444 !important;
+  color: #fff !important;
+  text-transform: none !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 500 !important;
+  padding: 10px 28px !important;
+  border-radius: 4px !important;
+}
+
+.wishlist-empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.wishlist-empty h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.wishlist-empty p {
+  color: #888;
+  margin-bottom: 24px;
 }

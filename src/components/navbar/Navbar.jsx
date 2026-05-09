@@ -42,8 +42,8 @@ function Navbar() {
             <BiSearch />
           </button>
         </form>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <button className="likebutton" style={{ position: "relative" }}>
+        <div className="nav-icons">
+          <button className="likebutton">
             <Link to="/wishlist">
               <PiHeartStraightBold />
               {wishlistCount > 0 && (
@@ -51,7 +51,7 @@ function Navbar() {
               )}
             </Link>
           </button>
-          <button className="shopbutton" style={{ position: "relative" }}>
+          <button className="shopbutton">
             <Link to="/cart">
               <FaCartShopping />
               {cartCount > 0 && (

@@ -2,102 +2,97 @@
   display: block;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 20px;
-  font-family: "Poppins", sans-serif;
-  color: #1a1a2e;
+  padding: 60px 20px 80px;
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
 }
 
-/* ===========================
-   Our Story Section
-   =========================== */
+/* Story */
 .aboutbox {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 80px;
+  gap: 48px;
+  margin-bottom: 72px;
 }
 
 .about_txt {
   flex: 1;
-  max-width: 520px;
+  max-width: 500px;
 }
 
 .about_txt h1 {
-  font-size: 54px;
+  font-size: 48px;
   font-weight: 700;
   letter-spacing: -1px;
   line-height: 1.1;
   margin-bottom: 24px;
-  color: #1a1a2e;
+  color: #1a1a1a;
 }
 
 .about_txt p {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.8;
-  color: #555;
-  margin-bottom: 16px;
+  color: #666;
+  margin-bottom: 14px;
 }
 
 .aboutimg {
   flex: 1;
-  max-width: 540px;
+  max-width: 520px;
   width: 100%;
   border-radius: 8px;
   object-fit: cover;
 }
 
-/* ===========================
-   Stats Cards
-   =========================== */
+/* Stats */
 .aboutcards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-bottom: 80px;
+  gap: 20px;
+  margin-bottom: 72px;
 }
 
 .aboutcard {
   border: 1.5px solid #e0e0e0;
   border-radius: 6px;
-  padding: 32px 24px;
+  padding: 28px 20px;
   text-align: center;
   cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .aboutcard:hover {
   background: #db4444;
   border-color: #db4444;
-  box-shadow: 0 8px 30px rgba(219, 68, 68, 0.3);
+  box-shadow: 0 8px 28px rgba(219, 68, 68, 0.25);
 }
 
 .iconcard {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.07);
-  margin: 0 auto 16px;
-  transition: background 0.3s ease;
+  background: rgba(0, 0, 0, 0.06);
+  margin: 0 auto 14px;
+  transition: background 0.3s;
 }
 
 .aboutcard:hover .iconcard {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .miniiconcard {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: #1a1a2e;
-  transition: background 0.3s ease;
+  background: #1a1a1a;
+  transition: background 0.3s;
 }
 
 .aboutcard:hover .miniiconcard {
@@ -105,9 +100,9 @@
 }
 
 .abouticon {
-  font-size: 22px;
+  font-size: 20px;
   color: #fff;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .aboutcard:hover .abouticon {
@@ -116,11 +111,11 @@
 
 .aboutcard span {
   display: block;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   margin-bottom: 6px;
-  color: #1a1a2e;
-  transition: color 0.3s ease;
+  color: #1a1a1a;
+  transition: color 0.3s;
 }
 
 .aboutcard:hover span {
@@ -128,23 +123,21 @@
 }
 
 .aboutcard p {
-  font-size: 14px;
+  font-size: 13px;
   color: #777;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .aboutcard:hover p {
   color: rgba(255, 255, 255, 0.85);
 }
 
-/* ===========================
-   Team Section
-   =========================== */
+/* Team */
 .devs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-bottom: 80px;
+  gap: 28px;
+  margin-bottom: 72px;
 }
 
 .devscard {
@@ -155,11 +148,8 @@
   width: 100%;
   border-radius: 6px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   aspect-ratio: 3 / 3.5;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
 }
 
 .devimg img {
@@ -167,19 +157,24 @@
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  transition: transform 0.3s;
+}
+
+.devimg:hover img {
+  transform: scale(1.03);
 }
 
 .devscard h2 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 4px;
-  color: #1a1a2e;
+  color: #1a1a1a;
 }
 
 .devscard > p {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 16px;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 14px;
 }
 
 .devscard ul {
@@ -191,10 +186,10 @@
 }
 
 .devscard ul li {
-  font-size: 18px;
-  color: #1a1a2e;
+  font-size: 17px;
+  color: #1a1a1a;
   cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s, transform 0.2s;
 }
 
 .devscard ul li:hover {
@@ -202,40 +197,59 @@
   transform: translateY(-3px);
 }
 
-/* ===========================
-   Services Section
-   =========================== */
+/* Services */
 .services {
-  
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 24px;
   padding-top: 40px;
-  border-top: 1.5px solid #e0e0e0;
+  border-top: 1.5px solid #f0f0f0;
 }
 
 .services_box {
   text-align: center;
   padding: 24px 16px;
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.services_box:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 .services_box img {
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .services_box h2 {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   margin-bottom: 8px;
-  color: #1a1a2e;
+  color: #1a1a1a;
 }
 
 .services_box p {
   font-size: 13px;
   color: #888;
-  line-height: 1.6;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutbox {
+    flex-direction: column;
+  }
+  .aboutcards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .devs {
+    grid-template-columns: 1fr;
+  }
+  .services {
+    grid-template-columns: 1fr;
+  }
 }

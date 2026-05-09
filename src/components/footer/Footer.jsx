@@ -1,28 +1,27 @@
-import React from 'react'
-import './Footer.css'
+import React from 'react';
+import './Footer.css';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
 function Footer() {
   return (
-   <footer className="footer">
+    <footer className="footer">
       <div className="footer_container">
+
         <div className="footer_col">
           <h3>Exclusive</h3>
           <h4>Subscribe</h4>
           <p>Get 10% off your first order</p>
-
           <div className="subscribe">
             <input type="email" placeholder="Enter your email" />
-            <button><img src="./imgs/Vector.png" alt="" /></button>
+            <button>
+              <img src="/imgs/Vector.png" alt="send" style={{ width: 16, height: 16, filter: 'invert(1)' }} />
+            </button>
           </div>
         </div>
 
         <div className="footer_col">
           <h4>Support</h4>
-          <p>
-            111 Bijoy sarani, Dhaka,
-            <br />
-            DH 1515, Bangladesh.
-          </p>
+          <p>111 Bijoy sarani, Dhaka,<br />DH 1515, Bangladesh.</p>
           <p>exclusive@gmail.com</p>
           <p>+88015-88888-9999</p>
         </div>
@@ -50,31 +49,30 @@ function Footer() {
 
         <div className="footer_col">
           <h4>Download App</h4>
-          <p className="small">Save $3 with App New User Only</p>
-
+          <p className="small" style={{ fontSize: 12, color: '#888' }}>Save $3 with App New User Only</p>
           <div className="app_box">
-            <img src="/imgs/Qrcode.png" alt="qr" />
-
+            <img src="/imgs/Qrcode.png" alt="QR Code" />
             <div className="stores">
-              <img src="/imgs/playmerket.png" alt="" />
-              <img src="/imgs/appmarket.png" alt="" />
+              <img src="/imgs/playmerket.png" alt="Google Play" />
+              <img src="/imgs/appmarket.png" alt="App Store" />
             </div>
           </div>
-
           <div className="socials">
-            <i className="fab fa-facebook-f"></i>
-            <i className="fab fa-twitter"></i>
-            <i className="fab fa-instagram"></i>
-            <i className="fab fa-linkedin-in"></i>
+            <a href="#" aria-label="Facebook"><FaFacebookF /></a>
+            <a href="#" aria-label="Twitter"><FaTwitter /></a>
+            <a href="#" aria-label="Instagram"><FaInstagram /></a>
+            <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
+            <a href="#" aria-label="YouTube"><FaYoutube /></a>
           </div>
         </div>
+
       </div>
 
       <div className="footer_bottom">
-        © Copyright Rimel 2022. All right reserved
+        © Copyright Rimel 2024. All rights reserved
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

@@ -1,81 +1,96 @@
 .sign {
   display: flex;
-  align-items: center;
-  padding: 5px 0px;
-  width: 1400px;
-  margin: auto;
-
+  align-items: stretch;
+  min-height: calc(100vh - 80px);
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+.sign > img {
+  flex: 1;
+  width: 50%;
+  object-fit: cover;
+  display: block;
+  max-height: 750px;
+}
+
+.sign_up {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+  max-width: 500px;
+}
+
+.sign_up h1 {
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.sign_up > p {
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 32px;
+}
+
 .sing_inputs {
   display: flex;
   flex-direction: column;
 }
 
-.sign_up {
-  width: 371px;
-  margin-left: 80px;
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-}
-
-.sign_up h1 {
-  font-weight: 500;
-  font-size: 36px;
-  margin-bottom: 20px;
-  margin-left: 23px;
-}
-.sign_up p {
-  font-weight: 400;
-  font-size: 16px;
-  margin-bottom: 20px;
-  margin-left: 23px;
-}
-
-
 .input-container {
   position: relative;
-  margin: 20px;
+  margin-bottom: 20px;
 }
-
 
 .input-field {
   display: block;
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
+  padding: 12px 0;
+  font-size: 15px;
   border: none;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 1.5px solid #ddd;
   outline: none;
   background-color: transparent;
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
+  transition: border-color 0.2s;
 }
 
-/* Input label */
+.input-field:focus {
+  border-bottom-color: #db4444;
+}
+
+.input-field::placeholder {
+  color: #bbb;
+}
+
 .input-label {
   position: absolute;
   top: 0;
   left: 0;
   font-size: 16px;
-  color: rgba(204, 204, 204, 0);
+  color: transparent;
   pointer-events: none;
   transition: all 0.3s ease;
 }
 
-/* Input highlight */
 .input-highlight {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 2px;
+  height: 1.5px;
   width: 0;
-  background-color: rgb(0, 72, 255);
+  background-color: #db4444;
   transition: all 0.3s ease;
 }
 
-/* Input field:focus styles */
 .input-field:focus + .input-label {
   top: -20px;
-  font-size: 12px;
+  font-size: 11px;
   color: #db4444;
 }
 
@@ -83,87 +98,115 @@
   width: 100%;
 }
 
-.sing_inputs button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 333px;
-  height: 56px;
-  border-radius: 4px;
+.eye-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
-  gap: 15px;
-}
-.accaunt {
-  background: #db4444;
-  border: 1px solid rgba(0, 0, 0, 0.53);
-  color: #fafafa;
-  font-weight: 500;
-  font-size: 16px;
-  margin-bottom: 30px;
-  transition: all 0.2s ease-in-out;
-  margin-top: 20px;
-  margin-left: 22px;
-  border: none;
-}
-.accaunt:hover {
-  background: #c63a3a;
-  transform: translateY(-2px); 
-  box-shadow: 0 8px 20px rgba(219, 68, 68, 0.25);
-}
-.withgoogle {
-  font-weight: 400;
-  font-size: 16px;
-  color: black;
-  border: 1px solid rgba(0, 0, 0, 0.53);
-  background: transparent;
-  transition: all 0.2s ease-in-out;
-  margin-left: 22px;
-  border: none;
-  background-color: #b3afafa0;
+  font-size: 18px;
+  color: #999;
+  transition: color 0.2s;
 }
 
-.withgoogle:hover {
-  background: rgba(0, 0, 0, 0.04);
-  border-color: rgba(0, 0, 0, 0.8);
-  transform: translateY(-2px);
+.eye-icon:hover {
+  color: #db4444;
 }
 
 .signbutton {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  margin-bottom: 40px;
+  gap: 12px;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.accaunt {
+  width: 100%;
+  height: 50px;
+  background: #db4444;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.accaunt:hover {
+  background: #c63a3a;
+  transform: translateY(-2px);
+}
+
+.accaunt:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.withgoogle {
+  width: 100%;
+  height: 50px;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
+  border: 1.5px solid #ddd;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.withgoogle:hover {
+  border-color: #aaa;
+  background: #fafafa;
+}
+
+.googleicon {
+  font-size: 22px;
+}
+
+.already {
+  text-align: center;
 }
 
 .already p {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #555;
 }
 
 .already p a {
-    text-decoration: none;
-    color: #3a64c6;
-  /* text-decoration: underline; */
-
+  color: #db4444;
+  font-weight: 500;
+  text-decoration: underline;
 }
 
-.already p a:hover{
-  color: rgb(0, 34, 255);
-}
-.googleicon {
-  font-size: 30px;
-}
-.password-container {
-  display: flex;
-  align-items: center;
+.already p a:hover {
+  opacity: 0.8;
 }
 
-.eye-icon {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  color: #666;
+/* Responsive */
+@media (max-width: 768px) {
+  .sign {
+    flex-direction: column;
+  }
+  .sign > img {
+    width: 100%;
+    max-height: 240px;
+  }
+  .sign_up {
+    padding: 40px 24px;
+    max-width: 100%;
+  }
 }
